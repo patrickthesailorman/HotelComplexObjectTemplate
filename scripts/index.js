@@ -71,5 +71,5 @@ document.getElementById("reservationForm").onsubmit = function(event) {
         alert("Please Select a room.");
         return;
     }
-    alert("You have reserved room...");
+    alert("You have reserved room " + hotel.rooms[parseInt(roomSelected)].name + ".");
 }
