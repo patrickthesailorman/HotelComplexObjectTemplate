@@ -53,7 +53,23 @@ console.log("Stop");
 document.getElementById("reservationForm").onsubmit = function(event) {
     event.preventDefault();
     if(!document.getElementById("confirmation").checked) {
-        alert("Please agree to terms motherfucker");
+        alert("Please agree to terms");
         return;
     }
+    
+    var radios = document.getElementsByName("roomType");
+    var roomSelected = "";
+    
+    for(var i = 0; i < radios.length; i ++) {
+        if(radios[i].checked) {
+            roomSelected = radios[i].value;
+            break;
+        }
+    }
+    
+    if(roomSelected == "") {
+        alert("Please Select a room.");
+        return;
+    }
+    alert("You have reserved room...");
 }
